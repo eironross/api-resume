@@ -16,7 +16,7 @@ import random
 # Accessing the dictionary in the list
 # print(list(data.values())[0])
 
-with open ("./resume.json") as file:
+with open (".public/resume.json") as file:
     data = json.load(file)
 
 app = FastAPI()
@@ -110,3 +110,8 @@ async def read_cert(cert_id: int | None = None):
 
 
 # Testing github uploading my first project
+
+# import uvicorn
+
+# if __name__ == "__main__":
+#   uvicorn.run("server.api:app", host="0.0.0.0", port=8000, reload=True)
