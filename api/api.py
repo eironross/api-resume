@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 import json
 import random
+from typing import Optional
 
 
 """
@@ -33,7 +34,7 @@ async def read_random():
     return list(data.values())[num]
 
 @app.get("/resume")
-async def read_resource(type: str | None = None):
+async def read_resource(type: Optional[str] = None):
     """ Route that returns a data.
 
     Args:
@@ -59,7 +60,7 @@ async def read_resource(type: str | None = None):
 # Sections of the API with filters
 
 @app.get("/work-exp")
-async def work_exp(exp_id: int | None = None):
+async def work_exp(exp_id: Optional[int] = None):
     if exp_id:
         for work in data["work-experience"]:
             if exp_id == work["id"]:
@@ -68,7 +69,7 @@ async def work_exp(exp_id: int | None = None):
     return {"work-experience": data["work-experience"]}
 
 @app.get("/filter-project")
-async def read_proj(project_id: int | None = None):
+async def read_proj(project_id: Optional[int] = None):
     if project_id:
         for project in data["projects"]:
             if project_id == project["id"]:
@@ -77,7 +78,7 @@ async def read_proj(project_id: int | None = None):
     return {"projects": data["projects"]}
 
 @app.get("/filter-cert")
-async def read_cert(cert_id: int | None = None):
+async def read_cert(cert_id: Optional[int] = None):
     if cert_id:
         for cert in data["certifications"]:
             if cert_id == cert["id"]:
