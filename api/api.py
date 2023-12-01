@@ -2,6 +2,7 @@ from fastapi import FastAPI
 import json
 import random
 
+
 """
     Hello everyone, this is my first project in API. 
     The goal to create a API resume that return pieces of information about who accesses the API
@@ -113,4 +114,5 @@ async def read_cert(cert_id: int | None = None):
 # import uvicorn
 
 # if __name__ == "__main__":
-#   uvicorn.run("server.api:app", host="0.0.0.0", port=8000, reload=True)
+#     port = int(getenv("PORT", 8000))
+#     uvicorn.run("api.main:app", host="0.0.0.0", port=port, reload=True)
