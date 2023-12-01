@@ -16,7 +16,7 @@ import random
 # Accessing the dictionary in the list
 # print(list(data.values())[0])
 
-with open (".public/resume.json") as file:
+with open ("./public/resume.json") as file:
     data = json.load(file)
 
 app = FastAPI()
