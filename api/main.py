@@ -7,7 +7,6 @@ import random
     The goal to create a API resume that return pieces of information about who accesses the API
     
 """
-#   // McRj0mYo8uFVjVqDuAEtA4Y8
 # To run the app enter this command in the terminal
 # uvicorn main:app --reload to run the server 
 # main - is the name of the file py and app is the name of the variable in the main py
