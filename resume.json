@@ -15,7 +15,6 @@
         ]
 
     },
-    "profile": "Created web automation tools, reporting tools and data handling tools using Excel VBA and Python to handle a task effectively. Enthusiastic in building programs using Excel VBA and Python",
     "work-experience": [
             {
                 "id": 1,
@@ -23,7 +22,7 @@
                     "position": "Assistant Energy Trader",
                     "company": "GNPower Kauswagan Ltd. Co.",
                     "address": "Mariveles, Bataan",
-                    "descriptions": {
+                    "job-descriptions": {
                         "item-1": "Built a Market Data downloader using Python via Selenium to save time in gathering data.",
                         "item-2": "Created a Reporting Program using Excel VBA, reduced time in creating reports",
                         "item-3": "Built a market data compiler using Python to be used in compiling data and analysis",
@@ -104,21 +103,21 @@
         {
             "id": 1,
             "project-name": "API Resume",
-            "description": "A API based resume which can returns info of my resume base on the request from the client",
-            "tech": "Javascript, Express, Axios",
+            "description": "An API based resume which can returns info of my resume base on the request from the client",
+            "tech": "FastAPI",
             "created-year": "2023"
         },
         {
             "id": 2,
             "project-name": "Market Data Downloader",
-            "description": "Downloads market data from IEMOP. Extract data from the zip file then transfer the data to the QNAP",
+            "description": "Downloads market data from IEMOP using Selenium. Extracts data from the zip files then transfer the data to the QNAP",
             "tech": "Python, Selenium",
             "created-date": "2022"
         },
         {
             "id": 3,
             "project-name": "MAXIMO Downloader",
-            "description": "Downloads the All Operation Logs from MAXIMO. Only get the approved logs. Use the unique id to fetch the log one by one and download it",
+            "description": "Downloads all Operation Logs from MAXIMO by year. Only get the approved logs. Use the unique id from excel to access the log one by one and download it",
             "tech": "Python, Selenium",
             "created-date": "2023"
         },
@@ -130,7 +129,6 @@
             "created-date": "2023"
         }
     ], 
-    "about-me": "Hi, I'm Eiron aspiring to be a full stack developer. Thank you for using the my API Project. Hopefully, we can get in touch soon. Feel free to contact me if needed",
-    "version": "1.0.0"
+    "about-me": "Hi, I'm Eiron aspiring to be a full stack developer. Thank you for using the my API Project. Hopefully, we can get in touch soon. Feel free to contact me if needed"
 
 }
