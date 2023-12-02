@@ -4,7 +4,7 @@ import json, random
 
 """
     Hello everyone, this is my first project in API. 
-    The goal to create a API resume that return pieces of information about who accesses the API
+    The goal to create a API resume that return pieces of information when accessing the API
     
     # To run the app enter this command in the terminal
     # uvicorn main:app --reload to run the server 
