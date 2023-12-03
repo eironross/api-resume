@@ -48,7 +48,7 @@ def rate_limited(max_calls: int, time_frame: int):
 
 @app.get("/")
 @rate_limited(max_calls=MAX_LIMIT, time_frame=SECONDS)
-async def read_root():
+async def read_root(request: Request):
     return {"message": "Welcome to my API Resume"}
 
 @app.get("/random")
