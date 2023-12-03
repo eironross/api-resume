@@ -47,6 +47,7 @@ def rate_limited(max_calls: int, time_frame: int):
     return decorator
 
 @app.get("/")
+@rate_limited(max_calls=MAX_LIMIT, time_frame=SECONDS)
 async def read_root():
     return {"message": "Welcome to my API Resume"}
 
@@ -60,7 +61,7 @@ async def read_random(request: Request):
 
 @app.get("/resume")
 @rate_limited(max_calls= MAX_LIMIT, time_frame=SECONDS)
-async def read_resource(type: Optional[str] = None):
+async def read_resource(request: Request, type: Optional[str] = None):
     """ Route that returns a data.
     Args:
         type (str): Optional defaults to None, type = [ info, socials, license, skills, projects, certifications, about-me ]
@@ -68,7 +69,7 @@ async def read_resource(type: Optional[str] = None):
         array: returns an array of data. can be futher access using its id to return its value
     """
     if not type:
-        return {"message": "This type doesn't exist"}  
+        return {"resume": data}  
     
     if type in data:
         return { type: data[type]}
@@ -78,7 +79,7 @@ async def read_resource(type: Optional[str] = None):
 
 @app.get("/work-exp")
 @rate_limited(max_calls= MAX_LIMIT, time_frame=SECONDS)
-async def work_exp(exp_id: Optional[int] = None):
+async def work_exp(request: Request, exp_id: Optional[int] = None):
     if not exp_id:
         return {"work-experience": data["work-experience"]}
     
@@ -90,7 +91,7 @@ async def work_exp(exp_id: Optional[int] = None):
 
 @app.get("/filter-project")
 @rate_limited(max_calls= MAX_LIMIT, time_frame=SECONDS)
-async def read_proj(project_id: Optional[int] = None):
+async def read_proj(request: Request, project_id: Optional[int] = None):
     if not project_id:
         return {"projects": data["projects"]}
     
@@ -102,7 +103,7 @@ async def read_proj(project_id: Optional[int] = None):
 
 @app.get("/filter-cert")
 @rate_limited(max_calls= MAX_LIMIT, time_frame=SECONDS)
-async def read_cert(cert_id: Optional[int] = None):
+async def read_cert(request: Request, cert_id: Optional[int] = None):
     if not cert_id:
         return {"certifications": data["certifications"] }
     
