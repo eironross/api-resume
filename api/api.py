@@ -1,6 +1,7 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException, status, Request
 from typing import Optional
-import json, random
+import json, random, time
+from functools import wraps
 
 """
     Hello everyone, this is my first project in API. 
@@ -12,24 +13,53 @@ import json, random
     # https://fastapi.tiangolo.com/#run-it
 """
 
+MAX_LIMIT = 10
+SECONDS = 60
+
 # Reading the JSON data
 with open ("./resume.json") as file:
     data = json.load(file)
 
 app = FastAPI()
 
+def rate_limited(max_calls: int, time_frame: int):
+    """Limits the request on the API 
+
+    Args:
+        max_calls (int): Maximum number of calls allowed 
+        time_frame (int): The time frame (in seconds) for which the limit is applied
+    """
+    
+    def decorator(func):
+        calls = []
+        
+        @wraps(func)
+        async def wrapper(request: Request, *args, **kwargs):
+            now = time.time()
+            calls_in_time_frame = [call for call in calls if call > now - time_frame]
+            if len(calls_in_time_frame) >= max_calls:
+                raise HTTPException(status_code=status.HTTP_429_TOO_MANY_REQUESTS, detail="Rates limit exceed")
+            calls.append(now)
+            return await func(request, *args, **kwargs)
+        
+        return wrapper
+    
+    return decorator
+
 @app.get("/")
 async def read_root():
     return {"message": "Welcome to my API Resume"}
 
 @app.get("/random")
-async def read_random():
+@rate_limited(max_calls= MAX_LIMIT, time_frame=SECONDS)
+async def read_random(request: Request):
     num = random.randint(0, len(data)-1)
     if num > len(data):
         return {"message": "Data was out of range!"}
     return list(data.values())[num]
 
 @app.get("/resume")
+@rate_limited(max_calls= MAX_LIMIT, time_frame=SECONDS)
 async def read_resource(type: Optional[str] = None):
     """ Route that returns a data.
     Args:
@@ -47,6 +77,7 @@ async def read_resource(type: Optional[str] = None):
 # Sections of the API with filters
 
 @app.get("/work-exp")
+@rate_limited(max_calls= MAX_LIMIT, time_frame=SECONDS)
 async def work_exp(exp_id: Optional[int] = None):
     if not exp_id:
         return {"work-experience": data["work-experience"]}
@@ -58,6 +89,7 @@ async def work_exp(exp_id: Optional[int] = None):
     
 
 @app.get("/filter-project")
+@rate_limited(max_calls= MAX_LIMIT, time_frame=SECONDS)
 async def read_proj(project_id: Optional[int] = None):
     if not project_id:
         return {"projects": data["projects"]}
@@ -69,6 +101,7 @@ async def read_proj(project_id: Optional[int] = None):
     
 
 @app.get("/filter-cert")
+@rate_limited(max_calls= MAX_LIMIT, time_frame=SECONDS)
 async def read_cert(cert_id: Optional[int] = None):
     if not cert_id:
         return {"certifications": data["certifications"] }
