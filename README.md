@@ -68,8 +68,11 @@ Returns a list of work experience can be filtered by id
 
 <li>exp_id (Optional): Filter by id. Choice of 1</li>
 <br/>
-<strong>Example Request</strong>
 
+<strong>Example Request</strong>
+```
+GET https://api-resume-flores.vercel.app/work-exp?exp_id=1
+```
 
 
 <strong>Example Response</strong>
@@ -103,12 +106,12 @@ Returns a list of work experience can be filtered by id
 
 Returns a list of projects can be filtered by id.
 
-<li>project_id (Optional): Filter by id. Choice of 1, 2, 3, 4</li>
+<li>project_id (Optional): Filter by id. Choice of 1 to 5</li>
 <br/>
 
 <strong>Example Request</strong>
 ```
-GET https://api-resume-flores.vercel.app/project?project_id=1
+GET https://api-resume-flores.vercel.app/filter-project?project_id=1
 ```
 
 <strong>Example Response</strong>
@@ -128,8 +131,10 @@ GET https://api-resume-flores.vercel.app/project?project_id=1
 
 Returns a list of certifications can be filtered by id
 
-<li>cert_id (Optional): Filter by id. Choice of 1, 2, 3</li>
+<li>cert_id (Optional): Filter by id. Choice of 1 to 4  
+</li>
 <br/>
+
 <strong>Example Request</strong>
 ```
 GET https://api-resume-flores.vercel.app/filter-project?project_id=1
