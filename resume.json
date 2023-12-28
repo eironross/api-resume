@@ -43,7 +43,7 @@
             "id":1,
             "programming-skills": {
                 "item-1": "Python (Flask, Pandas, Selenium, Web Automation, SQLite, SQLAlchemy, Requests, BeautifulSoup4)",
-                "item-2": "Javascript(jQuery, Axios, DOM Manipulation)",
+                "item-2": "Javascript",
                 "item-3": "HTML, Cascading Styled Sheets",
                 "item-4": "Structured Query Language (PostGreSQL, SQLite)",
                 "item-5": "Application Programming Interface"
@@ -55,8 +55,7 @@
                 "item-1": "Microsoft Offices (PowerPoint, Word, Excel)",
                 "item-2": "Visual Basic for Application (VBA)",
                 "item-3": "Analytical Skills",
-                "item-4": "Interpersonal Skills",
-                "item-5": "Attention to Detail"
+                "item-4": "Interpersonal Skills"
             }
         }   
     ],
@@ -97,6 +96,13 @@
             "issued-by": "Independent Electricity Market Operator of the Philippines, Inc. (IEMOP)",
             "issued-date": "Sep 2022",
             "credential-id": "BWT-080922050"
+        }, 
+        {
+            "id": 4, 
+            "title": "The Complete 2023 Web Development Bootcamp",
+            "issued-by": "Udemy",
+            "issued-date": "Dec 2023",
+            "credential-id": "UC-00833bb3-88f4-453c-a805-361232436908"
         }
     ], 
     "projects": [
@@ -112,21 +118,28 @@
             "project-name": "Market Data Downloader",
             "description": "Downloads market data from IEMOP using Selenium. Extracts data from the zip files then transfer the data to the QNAP",
             "tech": "Python, Selenium",
-            "created-date": "2022"
+            "created-year": "2022"
         },
         {
             "id": 3,
             "project-name": "MAXIMO Downloader",
             "description": "Downloads all Operation Logs from MAXIMO by year. Only get the approved logs. Use the unique id from excel to access the log one by one and download it",
             "tech": "Python, Selenium",
-            "created-date": "2023"
+            "created-year": "2023"
         },
         {
             "id": 4,
             "project-name": "Reportorial Program",
             "description": "VBA Program that creates a report base on the IER of the power plant. The inputs will be pass from VBA Excel to Word (Templated Document). Then a report will be created and will be logged",
             "tech": "VBA, Word",
-            "created-date": "2023"
+            "created-year": "2023"
+        },
+        {
+            "id": 5, 
+            "project-name": "Reporting Management System",
+            "description": "Create a reporting tool that will generate report for every event in the Power Plant.",
+            "tech": "NodeJS, ExpressJS, EJS, AJAX, PostGreSQL, Bootstrap",
+            "created-year": "2023"
         }
     ], 
     "about-me": "Hi, I'm Eiron aspiring to be a full stack developer. Thank you for using the my API Project. Hopefully, we can get in touch soon. Feel free to contact me if needed"
