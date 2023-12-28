@@ -1,7 +1,7 @@
 # API Resume Documentation
 
 ## Description
-Hello, This is my API Resume. This is my project that I created while learning coding with Python. The goal is to implement the REST and create a simply API that returns JSON data using my Resume. 
+Hello, This is my API project that I created while learning coding with Python. The goal is to create a simply API that returns JSON data using my Resume. 
 
 Requests are rate limited to 10 requests every 1 minute.
 
