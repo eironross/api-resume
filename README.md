@@ -3,8 +3,6 @@
 ## Description
 Hello, This is my API Resume. This is my project that I created while learning coding with Python. The goal is to implement the REST and create a simply API that returns JSON data using my Resume. 
 
-Requests are rate limited to 10 requests every 1 minute.
-
 ## Usage
 
 ### Get a Random Information
@@ -13,11 +11,11 @@ Returns a randomly selected information from the resume.
 
 <strong>Example Request:</strong>
 ```
-GET https://api-resume-flores.app/random
+https://api-resume-flores.vercel.app/random
 ```
 
 <strong>Example Response:</strong>
-```
+```json
 {
     "name": "Eiron Ross Flores",
     "contact": "09494780589",
@@ -36,7 +34,7 @@ GET https://api-resume-flores.app/random
 
 ### Filter Resume
 
-Returns part of resume filtered by type
+Returns part of the resume filtered by type
 
 <li>
           type (Optional): Filter by type. Choice of <code>info</code>,
@@ -49,11 +47,11 @@ Returns part of resume filtered by type
 
 <strong>Example Request:</strong>
 ```
-GET https://api-resume-flores.vercel.app/resume?types=socials
+https://api-resume-flores.vercel.app/resume?types=socials
 ```
 
 <strong>Example Response:</strong>
-```
+```json
 {
     "socials": {
         "linkedin": "https://linkedin.com/in/eironross",
@@ -71,12 +69,12 @@ Returns a list of work experience can be filtered by id
 
 <strong>Example Request</strong>
 ```
-GET https://api-resume-flores.vercel.app/work-exp?exp_id=1
+https://api-resume-flores.vercel.app/work-exp?exp_id=1
 ```
 
 
 <strong>Example Response</strong>
-```
+```json
 {
     "work-experience": {
         "id": 1,
@@ -111,11 +109,11 @@ Returns a list of projects can be filtered by id.
 
 <strong>Example Request</strong>
 ```
-GET https://api-resume-flores.vercel.app/filter-project?project_id=1
+https://api-resume-flores.vercel.app/filter-project?project_id=1
 ```
 
 <strong>Example Response</strong>
-```
+```json
 {
     "project": {
         "id": 1,
@@ -137,11 +135,11 @@ Returns a list of certifications can be filtered by id
 
 <strong>Example Request</strong>
 ```
-GET https://api-resume-flores.vercel.app/filter-project?project_id=1
+https://api-resume-flores.vercel.app/filter-cert?cert_id=1
 ```
 
 <strong>Example Response</strong>
-```
+```json
 {
     "certification": {
         "id": 1,
@@ -156,8 +154,9 @@ GET https://api-resume-flores.vercel.app/filter-project?project_id=1
 
 ## Project Status
 
-The API project can be improve by adding proper routing, query parameters, and improving the JSON data.
+The API project can be improve by adding proper routing, query parameters, and improving the structure of the JSON data.
 
 ## Author
 
-Created by Eiron Ross Flores. November 2023
+Created by Eiron Ross Flores. \
+November 2023
